@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profiles</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Inline css for background -->
+    <style>
+        body {
+            height: 2500px; /* sets the body height to allow scrolling */
+            background: linear-gradient(135deg,#ba437599 0%, #db1f3584 0%,#0f66b8ae 75%); /* gradient background */
+        }
+    </style>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="love1.png">
+</head>
+<body>
+    <div id="persondata">
+        <div id="per"></div>
+        <!-- to go back to login page -->
+        <div id="scroll_submit">
+            <a href="login.html"> <button type="button" id="profile_go_back">Go back to login page</button> </a>
+        </div>
+    </div>
+
+    <!-- JavaScript for displaying profiles -->
+    <script>
+        // function to find profiles
+        function profiles() {
+            fetch('students.json') // fetch data
+                .then(response => response.json()) 
+                .then(students => {
+                    let person = document.getElementById("per"); 
+
+                    students.forEach(student => { // loop through each student
+                        let data = document.createElement("div"); // create container for individual profile
+                        data.classList.add("data"); 
+
+                        let img = document.createElement("img"); // create image element
+                        img.src = student.Photo; // set image source
+                        img.alt = student.Name; // set image alt attribute
+
+                        const information = document.createElement("div"); 
+
+                        let name = document.createElement("h3"); 
+                        name.textContent = `Name: ${student.Name}`; 
+
+                        // create paragraphs for other information
+                        let rollno = document.createElement("p");
+                        rollno.textContent = `IITB Roll Number: ${student['IITB Roll Number']}`;
+                        let year = document.createElement("p");
+                        year.textContent = `Year of study: ${student['Year of Study']}`;
+                        let age = document.createElement("p");
+                        age.textContent = `Age: ${student.Age}`;
+                        let gender = document.createElement("p");
+                        gender.textContent = `Gender: ${student.Gender}`;
+                        let interests = document.createElement("p");
+                        interests.textContent = `Interests: ${student.Interests.join(', ')}`;
+                        let hobbies = document.createElement("p");
+                        hobbies.textContent = `Hobbies: ${student.Hobbies.join(', ')}`;
+                        let email = document.createElement("p");
+                        email.textContent = `Email: ${student.Email}`;
+
+                        // append information elements to container
+                        information.appendChild(name);
+                        information.appendChild(rollno);
+                        information.appendChild(year);
+                        information.appendChild(age);
+                        information.appendChild(gender);
+                        information.appendChild(interests);
+                        information.appendChild(hobbies);
+                        information.appendChild(email);
+
+                        // append image and information to profile container
+                        data.appendChild(img);
+                        data.appendChild(information);
+                        person.appendChild(data);
+                    });
+                });
+        }
+
+        // function to go back to previous page
+        function goBack() {
+            window.history.back();
+        }
+
+       
+        document.addEventListener('DOMContentLoaded', profiles);
+    </script>
+</body>
+</html>

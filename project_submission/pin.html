@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two step verification</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body{
+            background-image:url(twostep.jpg);
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 120%;
+
+        }
+    #pin{
+        text-align: center;
+        font-size: 20px;
+        background-color:rgba(237, 163, 174, 0.54);
+        margin: 0 auto;
+        width: 400px;
+        height: 200px;
+        border-radius: 20px;
+
+    }
+    #toverify{
+        margin-top: 90px;
+    }
+    #answer{
+        margin-bottom: 25px;
+        border-radius: 5px;
+    }
+    </style>
+        <link rel="icon" type="image/x-icon" href="love4.jpeg">
+
+</head>
+<body>
+    <div id="pin">
+        <form id="toverify">
+            <div id="question">
+                <label for="answer">Two step verification</label>
+                <p id="maths"></p>
+                <input type="text" id="answer" name="answer" placeholder="Your answer" required>
+            </div>
+         
+        <a href="dating.html" ><button type="submit">Continue</button></a>
+        </form>
+    </div>
+    <script>
+        // Function to generate a random math problem
+        function arithmetic() {
+            const num1 = Math.floor(Math.random() * 10) + 1; 
+           // Random number from 1 and 10 
+           const num2 = Math.floor(Math.random() * 10) + 1; 
+            const algebra = ['+', '-',]; 
+            const value = algebra[Math.floor(Math.random() * algebra.length)]; 
+            let maths;
+
+            switch (value) {
+                case '+':
+                    maths = `${num1} + ${num2}`;
+                    break;
+                case '-':
+                    maths = `${num1} - ${num2}`;
+                    break;
+                
+                
+            }
+
+            return maths;
+        }
+
+        // start with a random math problem
+        document.addEventListener('DOMContentLoaded', function () {
+            const mathematics = document.getElementById('maths');
+            const maths = arithmetic();
+            mathematics.textContent = maths;
+
+            // calculation of the math problem
+            const correctAnswer = eval(maths);
+            document.getElementById('toverify').addEventListener('submit', function (event) {
+                event.preventDefault(); 
+                const userAnswer = document.getElementById('answer').value;
+
+                // verifying user's answer is correct or not
+                if (userAnswer.trim() === correctAnswer.toString()) {
+                    // redirect to dating.html page if answer is correct
+                    window.location.href = 'dating.html';
+                } else {
+                    alert('Wrong answer');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

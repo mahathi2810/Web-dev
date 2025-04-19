@@ -1,0 +1,249 @@
+/*css code for login.html*/
+
+#loginbody{
+    background-image:url(freestocks-r_oV6smBBYk-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#loginh1{
+    font-size: 40px;
+    margin-top:100px ;
+}
+
+.id_of_div{
+    margin: auto;
+    margin-bottom: 100px;
+    padding: 25px;
+    color:rgb(210, 30, 87);
+    background-color:rgba(133, 74, 83, 0.4);
+    width:500px;
+    height: 500px;
+    border-radius: 30px;
+    font-size: 25px;
+}
+
+#sub_division{
+   margin-top: 1px;
+    padding:10px;
+    width:300px;
+    color:rgb(167, 2, 2);
+    font-size: 30px;
+    border-radius: 40px;
+    margin-bottom: 1px;
+    text-align: center;
+    padding: 40px;
+    margin-left: 50px;
+}
+
+#a{
+   margin-top: 20px;
+    margin-bottom: 10px;
+    width:300px;
+    height:40px;
+    margin-left: 1px;
+    border-radius: 10px;
+}
+
+#b{
+    margin-bottom: 60px;
+    margin-top: 20px;
+    width: 300px;
+    height: 40px;
+    margin-left: 1px;
+    border-radius: 10px;
+}
+
+#button_id{
+
+    border-radius: 10px;
+    font-size: 15px;
+    width:200px;
+    height:40px;
+    background-color: rgba(186, 37, 84, 0.736);
+    margin-left: 10px;
+    }
+
+#loginh1{
+    text-align: center; 
+}
+
+#loginh3{
+   
+    font-size: 30px;
+    margin-left: 90px;
+}
+
+#forgot_id{
+    text-align: center;
+    font-size: 20px;
+    margin-left: 170px;
+    color: rgb(125, 4, 24);
+}
+/*css code for forgot.html*/
+
+
+#forgot_background{
+        background-image:url(niranjan-_-photographs-TfaWLuBoU70-unsplash.jpg);
+        background-size: 100% 125%;
+        background-repeat: no-repeat;
+        background-position: center;
+        font-size: 25px;
+        background-attachment: fixed;
+    
+}
+
+    .x{
+        text-align: center;
+        margin-top: 100px;
+       font-size: 20px
+    }
+
+    #aa{
+        margin-top: 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+    }
+   
+    .y{
+        text-align: center;
+        margin-top: 50px;
+        font-size: 20px;
+        margin-bottom: 30px;
+       
+    }
+    #secretanswer{
+        margin-top: 10px;
+    }
+    #for_answer_in_forgot{
+        margin-top: 15px;
+    }
+   #submit_in_secret_question{
+    margin-top: 15px;
+   }
+    #forpassword{
+        text-align: center;
+        font-size: 20px;
+    }
+    #final_submit_in_forgot_page{
+        margin-top: 20px;
+        text-align: center;
+        margin-left: 150px;
+    }
+
+    #starting_id_of_div_in_forgot{
+
+        background-color: rgba(0, 128, 0, 0.218);
+        height: 450px;
+        width: 400px;
+       margin: 0 auto;
+       border-radius: 20px;
+        
+    }
+
+/* css code for dating.html */
+
+.dating_div{
+    
+    text-align: center;
+    background-color:rgba(199, 80, 100, 0.327);
+    border-radius: 30px;
+    width: 50%;
+    height: 100%;
+
+    margin: auto;
+    padding: 2%;
+    
+}
+
+#dating_body{
+        background-image:url(forgotbg.jpg);
+        background-position: center;
+        background-size: 100% 150%;
+        background-repeat: no-repeat;
+      
+    
+}
+
+#iitbrollnum{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    }
+#name{
+        margin-top: 10px;
+        margin-bottom: 20px;
+        border-radius: 4px;
+
+}
+#yearofstudy{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+
+}
+#age{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+
+}
+#email{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+
+}
+#male{
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+#traveling{
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+#reading{
+    margin-top: 10px;
+}
+#button_of_logout{
+    margin-top: 20px;
+}
+#watching{
+    margin-bottom:15px;
+}
+#playing{
+    margin-left: 80px;
+    margin-bottom: 20px;
+}
+#scroll_in_dating_page{
+    margin-top: 10px;
+}
+
+/* css for scroll_or_swipe.html*/
+
+img{
+    width:300px;
+    height:300px;
+    margin-right: 20px;
+    margin-left: 5px;
+
+}
+
+.data {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+
+#profile_go_back{
+    margin-left: 700px;
+    font-size: 15px;
+    
+}
+
+
+
+
+   

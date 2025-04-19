@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="love2.png">
+
+</head>
+<body id="forgot_background">
+<div id="starting_id_of_div_in_forgot">
+    <div class="x">
+        <label for="aa">Username: </label><br>
+        <input type="text" id="aa" name="Username"><br>
+        <button type="button" id="submit_in_forgot">Submit</button>
+    </div>
+    
+    <div class="y" style="display: none;">
+        <label for="secretques">Secret question:</label><br>
+        <span id="secretan"></span><br>
+        <div id="for_answer_in_forgot">
+        <label for="secretanswer">Answer:</label><br>
+        <input type="text" id="secretanswer" name="Secret Answer"><br>
+        </div>
+        <button type="button" id="submit_in_secret_question">Submit</button>
+    </div>
+    
+    <div id="forpassword" style="display: none;">
+        <label>Password: </label><br>
+        <span id="password"></span>
+    </div>
+<a href="login.html"><button type="button" id="final_submit_in_forgot_page">Go back to login</button></a>
+
+</div>
+    <script>
+        fetch('login.json')
+            .then(res => res.json())
+            .then(information => {
+                const firstsubmit = document.getElementById("submit_in_forgot");
+                const secondsubmit = document.querySelector(".y");
+                const secretan = document.getElementById("secretan");
+                const pswd = document.getElementById("password");
+
+                firstsubmit.addEventListener('click', function() {
+                    event.preventDefault();
+                    const username = document.querySelector('#aa').value;
+
+                    const user = information.find(function(entry) {
+                        return entry.username === username;
+                    });
+
+                    if (user) {
+                        // to display the secret question section
+                        secondsubmit.style.display = 'block';
+                        const question = `${user.secret_question}`;
+                        secretan.textContent = question;
+                    } else {
+                        alert('No username found');
+                    }
+                });
+
+                const submission_of_secret_question = document.getElementById("submit_in_secret_question");
+                submission_of_secret_question.addEventListener('click', function() {
+                    const secretAnswer = document.querySelector('#secretanswer').value;
+                    const username = document.querySelector('#aa').value;
+
+                    const user = information.find(function(entry) {
+                        return entry.username === username && entry.secret_answer === secretAnswer;
+                    });
+
+                    if (user) {
+                        // display password
+                        document.getElementById("forpassword").style.display = 'block';
+                        pswd.textContent = user.password;
+                    } else {
+                        alert('Incorrect answer to the secret question');
+                    }
+                });
+            });
+    </script>
+</body>
+</html>

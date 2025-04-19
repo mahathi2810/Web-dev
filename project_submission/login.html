@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="love1.png">
+</head>
+<body id="loginbody">
+    <h1 id="loginh1">Get noticed for who you are, not what you look like !! ❤️‍🔥</h1>
+
+    <div class="id_of_div">
+        <h3 id="loginh3">Find your perfect partner 💖</h3>
+        <div id="sub_division">
+            <form>
+                <label for="a">Username: </label>
+                <input type="text" id="a" name="Username">
+                <label for="b">Password: </label>
+                <input type="text" id="b" name="Password">
+                <a href="pin.html"><button type="button" id="button_id">Let's begin the journey!!</button></a>
+            </form>
+        </div>
+        
+        <!-- javaScript code -->
+        <script>
+            fetch('login.json')
+            .then(res => res.json())
+            .then(information => {
+                const button = document.getElementById("button_id");
+                button.addEventListener('click', function() {
+                    event.preventDefault();
+                    const username = document.querySelector('#a').value;
+                    const password = document.querySelector('#b').value;
+
+                    // checks unsername and password
+                    const user = information.find(function(entry) {
+                        return entry.username === username && entry.password === password;
+                    });
+
+                    // redirects to pin.html page or shows error
+                    if (user) {
+                        window.location.href = 'pin.html';
+                    } else {
+                        alert('Please enter correct credentials 😢');
+                    }
+                });
+            });
+        </script>
+
+        <!-- forgot password link -->
+        <a href="forgot.html" id="forgot_id">Forgot password?</a>
+    </div>
+</body>
+</html>
